@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu – Mila Café Brews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Mila Café</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="menu.html">Order Online</a></li>
+        <li><a href="booking.html">Book a Table</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">☀</span>
+        </button>
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="eyebrow">MILA CAFÉ · JOHANNESBURG</p>
+      <h1>Our Menu</h1>
+      <p>Everything is freshly prepared. Explore our full selection below.</p>
+    </div>
+  </section>
+
+  <!-- MENU CATEGORIES -->
+  <section class="section menu-section">
+    <div class="category-tabs" id="category-tabs">
+      <button class="tab active" data-category="coffee">Coffee</button>
+      <button class="tab" data-category="breakfast">Breakfast</button>
+      <button class="tab" data-category="lunch">Lunch</button>
+      <button class="tab" data-category="desserts">Desserts</button>
+      <button class="tab" data-category="drinks">Drinks</button>
+    </div>
+
+    <!-- Coffee -->
+    <div class="menu-category active" id="cat-coffee">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/cappuccino.jpg" alt="Cappuccino" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cappuccino</h3>
+            <p class="product-desc">Rich espresso topped with velvety steamed milk foam.</p>
+            <div class="product-footer">
+              <span class="product-price">R38</span>
+              <button class="btn btn-add" onclick="addToCart(1, 'Cappuccino', 38, 'images/cappuccino.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/iced-latte.jpg" alt="Iced Latte" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Iced Latte</h3>
+            <p class="product-desc">Smooth espresso over ice with cold milk. Refreshing every time.</p>
+            <div class="product-footer">
+              <span class="product-price">R42</span>
+              <button class="btn btn-add" onclick="addToCart(2, 'Iced Latte', 42, 'images/iced-latte.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/flat-white.jpg" alt="Flat White" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Flat White</h3>
+            <p class="product-desc">Double ristretto with silky microfoam milk.</p>
+            <div class="product-footer">
+              <span class="product-price">R36</span>
+              <button class="btn btn-add" onclick="addToCart(7, 'Flat White', 36, 'images/flat-white.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/espresso.jpg" alt="Espresso" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Espresso</h3>
+            <p class="product-desc">Short, bold and full of character. A classic single shot.</p>
+            <div class="product-footer">
+              <span class="product-price">R28</span>
+              <button class="btn btn-add" onclick="addToCart(8, 'Espresso', 28, 'images/espresso.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/americano.jpg" alt="Americano" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Americano</h3>
+            <p class="product-desc">Espresso diluted with hot water for a smooth, lighter cup.</p>
+            <div class="product-footer">
+              <span class="product-price">R32</span>
+              <button class="btn btn-add" onclick="addToCart(9, 'Americano', 32, 'images/americano.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/mocha.jpg" alt="Mocha" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Mocha</h3>
+            <p class="product-desc">Espresso with chocolate and steamed milk. A rich treat.</p>
+            <div class="product-footer">
+              <span class="product-price">R44</span>
+              <button class="btn btn-add" onclick="addToCart(10, 'Mocha', 44, 'images/mocha.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Breakfast -->
+    <div class="menu-category" id="cat-breakfast">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/breakfast.jpg" alt="Breakfast Toast" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Breakfast Toast</h3>
+            <p class="product-desc">Sourdough toast with avocado, poached egg and seasoning.</p>
+            <div class="product-footer">
+              <span class="product-price">R55</span>
+              <button class="btn btn-add" onclick="addToCart(3, 'Breakfast Toast', 55, 'images/breakfast.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/oats.jpg" alt="Oat Bowl" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Oat Bowl</h3>
+            <p class="product-desc">Warm oats with banana, honey and toasted seeds.</p>
+            <div class="product-footer">
+              <span class="product-price">R48</span>
+              <button class="btn btn-add" onclick="addToCart(11, 'Oat Bowl', 48, 'images/oats.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/egg-muffin.jpg" alt="Egg Muffin" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Egg Muffin</h3>
+            <p class="product-desc">Toasted muffin with scrambled egg, cheese and tomato relish.</p>
+            <div class="product-footer">
+              <span class="product-price">R52</span>
+              <button class="btn btn-add" onclick="addToCart(12, 'Egg Muffin', 52, 'images/egg-muffin.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lunch -->
+    <div class="menu-category" id="cat-lunch">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/sandwich.jpg" alt="Chicken Sandwich" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Chicken Sandwich</h3>
+            <p class="product-desc">Grilled chicken, lettuce and aioli on a toasted brioche bun.</p>
+            <div class="product-footer">
+              <span class="product-price">R72</span>
+              <button class="btn btn-add" onclick="addToCart(4, 'Chicken Sandwich', 72, 'images/sandwich.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/salad.jpg" alt="Garden Salad" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Garden Salad</h3>
+            <p class="product-desc">Mixed greens, cherry tomatoes, cucumber and lemon vinaigrette.</p>
+            <div class="product-footer">
+              <span class="product-price">R62</span>
+              <button class="btn btn-add" onclick="addToCart(13, 'Garden Salad', 62, 'images/salad.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/wrap.jpg" alt="Veggie Wrap" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Veggie Wrap</h3>
+            <p class="product-desc">Grilled vegetables, hummus and fresh herbs in a warm wrap.</p>
+            <div class="product-footer">
+              <span class="product-price">R65</span>
+              <button class="btn btn-add" onclick="addToCart(14, 'Veggie Wrap', 65, 'images/wrap.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-category" id="cat-desserts">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/cheesecake.jpg" alt="Cheesecake" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cheesecake</h3>
+            <p class="product-desc">Creamy New York-style cheesecake with a buttery biscuit base.</p>
+            <div class="product-footer">
+              <span class="product-price">R48</span>
+              <button class="btn btn-add" onclick="addToCart(5, 'Cheesecake', 48, 'images/cheesecake.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/croissant.jpg" alt="Chocolate Croissant" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Chocolate Croissant</h3>
+            <p class="product-desc">Flaky butter croissant filled with dark chocolate.</p>
+            <div class="product-footer">
+              <span class="product-price">R35</span>
+              <button class="btn btn-add" onclick="addToCart(6, 'Chocolate Croissant', 35, 'images/croissant.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/brownie.jpg" alt="Chocolate Brownie" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Chocolate Brownie</h3>
+            <p class="product-desc">Fudgy, dense chocolate brownie with a glossy top.</p>
+            <div class="product-footer">
+              <span class="product-price">R30</span>
+              <button class="btn btn-add" onclick="addToCart(15, 'Chocolate Brownie', 30, 'images/brownie.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="menu-category" id="cat-drinks">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/orange-juice.jpg" alt="Fresh Orange Juice" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Fresh Orange Juice</h3>
+            <p class="product-desc">Freshly squeezed oranges. No added sugar, no preservatives.</p>
+            <div class="product-footer">
+              <span class="product-price">R38</span>
+              <button class="btn btn-add" onclick="addToCart(16, 'Fresh Orange Juice', 38, 'images/orange-juice.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/smoothie.jpg" alt="Berry Smoothie" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Berry Smoothie</h3>
+            <p class="product-desc">Blended mixed berries with yoghurt and a touch of honey.</p>
+            <div class="product-footer">
+              <span class="product-price">R45</span>
+              <button class="btn btn-add" onclick="addToCart(17, 'Berry Smoothie', 45, 'images/smoothie.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-wrap">
+            <img src="images/sparkling-water.jpg" alt="Sparkling Water" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sparkling Water</h3>
+            <p class="product-desc">Still or sparkling, chilled and refreshing.</p>
+            <div class="product-footer">
+              <span class="product-price">R20</span>
+              <button class="btn btn-add" onclick="addToCart(18, 'Sparkling Water', 20, 'images/sparkling-water.jpg')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <p class="footer-logo">Mila Café</p>
+        <p class="footer-location">Johannesburg, South Africa</p>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-heading">Navigate</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <p class="footer-heading">Opening Hours</p>
+        <ul>
+          <li>Mon – Fri: 7:00 – 18:00</li>
+          <li>Saturday: 8:00 – 17:00</li>
+          <li>Sunday: 9:00 – 15:00</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li>hello@milacafe.co.za</li>
+          <li>+27 11 000 0000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer-header">
+        <p class="cart-drawer-title">Added to your cart</p>
+        <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close">✕</button>
+      </div>
+      <div class="cart-drawer-item">
+        <img src="" alt="" id="drawer-item-image" class="drawer-item-img" />
+        <div class="drawer-item-details">
+          <p class="drawer-item-name" id="drawer-item-name"></p>
+          <p class="drawer-item-price" id="drawer-item-price"></p>
+          <p class="drawer-item-qty">Quantity: 1</p>
+        </div>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-primary btn-full">Go to My Cart</a>
+        <button class="btn btn-outline btn-full" id="continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

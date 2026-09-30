@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed – Mila Café Brews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Mila Café</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html">Order Online</a></li>
+        <li><a href="booking.html">Book a Table</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">☀</span>
+        </button>
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONFIRMATION -->
+  <section class="section confirmation-section">
+    <div class="confirmation-card">
+      <div class="confirmation-icon">✓</div>
+      <h1>Order Confirmed</h1>
+      <p class="confirmation-subtitle">Thank you for ordering from Mila Café.</p>
+
+      <div class="confirmation-details">
+        <div class="confirmation-row">
+          <span class="conf-label">Order Number</span>
+          <span class="conf-value" id="conf-order-number">MC-1024</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="conf-label">Order Type</span>
+          <span class="conf-value" id="conf-order-type">Pickup</span>
+        </div>
+        <div class="confirmation-row" id="conf-time-row">
+          <span class="conf-label">Pickup Time</span>
+          <span class="conf-value" id="conf-time"></span>
+        </div>
+      </div>
+
+      <div class="confirmation-items">
+        <p class="conf-items-label">Your Order</p>
+        <div id="conf-items-list">
+          <!-- Rendered by checkout.js -->
+        </div>
+        <div class="cart-summary-divider"></div>
+        <div class="cart-summary-row cart-total-row">
+          <span>Total</span>
+          <span id="conf-total">R0</span>
+        </div>
+      </div>
+
+      <div class="confirmation-actions">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="menu.html" class="btn btn-outline">View Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <p class="footer-logo">Mila Café</p>
+        <p class="footer-location">Johannesburg, South Africa</p>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-heading">Navigate</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <p class="footer-heading">Opening Hours</p>
+        <ul>
+          <li>Mon – Fri: 7:00 – 18:00</li>
+          <li>Saturday: 8:00 – 17:00</li>
+          <li>Sunday: 9:00 – 15:00</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li>hello@milacafe.co.za</li>
+          <li>+27 11 000 0000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer-header">
+        <p class="cart-drawer-title">Added to your cart</p>
+        <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close">✕</button>
+      </div>
+      <div class="cart-drawer-item">
+        <img src="" alt="" id="drawer-item-image" class="drawer-item-img" />
+        <div class="drawer-item-details">
+          <p class="drawer-item-name" id="drawer-item-name"></p>
+          <p class="drawer-item-price" id="drawer-item-price"></p>
+          <p class="drawer-item-qty">Quantity: 1</p>
+        </div>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-primary btn-full">Go to My Cart</a>
+        <button class="btn btn-outline btn-full" id="continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mila Café Brews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Mila Café</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html">Order Online</a></li>
+        <li><a href="booking.html">Book a Table</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">☀</span>
+        </button>
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-image-wrap">
+      <img src="images/hero-cafe.jpg" alt="Mila Café interior" class="hero-img" />
+      <div class="hero-image-fade"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">NEIGHBOURHOOD CAFÉ · JOHANNESBURG</p>
+      <h1 class="hero-heading">Freshly brewed.<br />Freshly made.</h1>
+      <p class="hero-text">Good coffee, fresh food and a simple way to order, book and enjoy your time at Mila Café.</p>
+      <div class="hero-buttons">
+        <a href="menu.html" class="btn btn-primary">Order Online</a>
+        <a href="booking.html" class="btn btn-outline">Book a Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED MENU -->
+  <section class="section featured-section">
+    <div class="section-header">
+      <p class="eyebrow">FROM THE MENU</p>
+      <h2 class="section-title">Featured from Mila</h2>
+    </div>
+    <div class="products-grid" id="featured-grid">
+
+      <div class="product-card" data-id="1" data-name="Cappuccino" data-price="38" data-image="images/cappuccino.jpg">
+        <div class="product-image-wrap">
+          <img src="images/cappuccino.jpg" alt="Cappuccino" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Cappuccino</h3>
+          <p class="product-desc">Rich espresso topped with velvety steamed milk foam.</p>
+          <div class="product-footer">
+            <span class="product-price">R38</span>
+            <button class="btn btn-add" onclick="addToCart(1, 'Cappuccino', 38, 'images/cappuccino.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="2" data-name="Iced Latte" data-price="42" data-image="images/iced-latte.jpg">
+        <div class="product-image-wrap">
+          <img src="images/iced-latte.jpg" alt="Iced Latte" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Iced Latte</h3>
+          <p class="product-desc">Smooth espresso over ice with cold milk. Refreshing every time.</p>
+          <div class="product-footer">
+            <span class="product-price">R42</span>
+            <button class="btn btn-add" onclick="addToCart(2, 'Iced Latte', 42, 'images/iced-latte.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="3" data-name="Breakfast Toast" data-price="55" data-image="images/breakfast.jpg">
+        <div class="product-image-wrap">
+          <img src="images/breakfast.jpg" alt="Breakfast Toast" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Breakfast Toast</h3>
+          <p class="product-desc">Sourdough toast with avocado, poached egg and seasoning.</p>
+          <div class="product-footer">
+            <span class="product-price">R55</span>
+            <button class="btn btn-add" onclick="addToCart(3, 'Breakfast Toast', 55, 'images/breakfast.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="4" data-name="Chicken Sandwich" data-price="72" data-image="images/sandwich.jpg">
+        <div class="product-image-wrap">
+          <img src="images/sandwich.jpg" alt="Chicken Sandwich" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Chicken Sandwich</h3>
+          <p class="product-desc">Grilled chicken, lettuce and aioli on a toasted brioche bun.</p>
+          <div class="product-footer">
+            <span class="product-price">R72</span>
+            <button class="btn btn-add" onclick="addToCart(4, 'Chicken Sandwich', 72, 'images/sandwich.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="5" data-name="Cheesecake" data-price="48" data-image="images/cheesecake.jpg">
+        <div class="product-image-wrap">
+          <img src="images/cheesecake.jpg" alt="Cheesecake" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Cheesecake</h3>
+          <p class="product-desc">Creamy New York-style cheesecake with a buttery biscuit base.</p>
+          <div class="product-footer">
+            <span class="product-price">R48</span>
+            <button class="btn btn-add" onclick="addToCart(5, 'Cheesecake', 48, 'images/cheesecake.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="6" data-name="Chocolate Croissant" data-price="35" data-image="images/croissant.jpg">
+        <div class="product-image-wrap">
+          <img src="images/croissant.jpg" alt="Chocolate Croissant" class="product-img" />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Chocolate Croissant</h3>
+          <p class="product-desc">Flaky butter croissant filled with dark chocolate.</p>
+          <div class="product-footer">
+            <span class="product-price">R35</span>
+            <button class="btn btn-add" onclick="addToCart(6, 'Chocolate Croissant', 35, 'images/croissant.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="section-cta">
+      <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+    </div>
+  </section>
+
+  <!-- WHY MILA CAFÉ -->
+  <section class="section why-section">
+    <div class="section-header">
+      <p class="eyebrow">WHY MILA CAFÉ</p>
+      <h2 class="section-title">A café that works for you.</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">☕</div>
+        <h3>Freshly Prepared</h3>
+        <p>Thoughtful food and coffee made to order.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📱</div>
+        <h3>Easy Online Ordering</h3>
+        <p>A simple café order from menu to collection.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚗</div>
+        <h3>Convenient Pickup or Delivery</h3>
+        <p>Choose what best fits your day.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📅</div>
+        <h3>Easy Table Booking</h3>
+        <p>Reserve a relaxed spot in a few steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="section-header">
+      <p class="eyebrow">WHAT OUR CUSTOMERS SAY</p>
+      <h2 class="section-title">Made for good moments.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Everything was fresh, the ordering process was simple, and my coffee was ready when I arrived."</p>
+        <div class="testimonial-author">
+          <span class="author-name">Thando M.</span>
+          <span class="author-location">Johannesburg</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Mila Café is my go-to spot for a quick lunch. The food is great and booking a table takes only a few minutes."</p>
+        <div class="testimonial-author">
+          <span class="author-name">Naledi K.</span>
+          <span class="author-location">Sandton</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I love being able to order ahead and choose pickup. It makes busy mornings so much easier."</p>
+        <div class="testimonial-author">
+          <span class="author-name">Sipho D.</span>
+          <span class="author-location">Johannesburg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="section booking-cta">
+    <div class="booking-cta-content">
+      <h2>Planning a meal with us?</h2>
+      <p>Reserve your table in a few simple steps.</p>
+      <a href="booking.html" class="btn btn-primary">Book a Table</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <p class="footer-logo">Mila Café</p>
+        <p class="footer-location">Johannesburg, South Africa</p>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-heading">Navigate</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="menu.html">Order Online</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <p class="footer-heading">Opening Hours</p>
+        <ul>
+          <li>Mon – Fri: 7:00 – 18:00</li>
+          <li>Saturday: 8:00 – 17:00</li>
+          <li>Sunday: 9:00 – 15:00</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li>hello@milacafe.co.za</li>
+          <li>+27 11 000 0000</li>
+          <li>14 Bean Street, Johannesburg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer-header">
+        <p class="cart-drawer-title">Added to your cart</p>
+        <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close">✕</button>
+      </div>
+      <div class="cart-drawer-item">
+        <img src="" alt="" id="drawer-item-image" class="drawer-item-img" />
+        <div class="drawer-item-details">
+          <p class="drawer-item-name" id="drawer-item-name"></p>
+          <p class="drawer-item-price" id="drawer-item-price"></p>
+          <p class="drawer-item-qty">Quantity: 1</p>
+        </div>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-primary btn-full">Go to My Cart</a>
+        <button class="btn btn-outline btn-full" id="continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

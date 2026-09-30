@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Table – Mila Café Brews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Mila Café</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html">Order Online</a></li>
+        <li><a href="booking.html" class="active">Book a Table</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">☀</span>
+        </button>
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="eyebrow">MILA CAFÉ · JOHANNESBURG</p>
+      <h1>Book a Table</h1>
+      <p>Reserve your spot in just a few steps.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="section booking-section">
+    <div class="booking-layout">
+
+      <!-- Form -->
+      <div class="booking-form-wrap" id="booking-form-wrap">
+        <form class="booking-form" id="booking-form" novalidate>
+
+          <div class="form-group">
+            <label for="b-name">Full Name</label>
+            <input type="text" id="b-name" name="b-name" placeholder="Jane Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label for="b-email">Email</label>
+            <input type="email" id="b-email" name="b-email" placeholder="jane@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="b-phone">Phone Number</label>
+            <input type="tel" id="b-phone" name="b-phone" placeholder="+27 82 000 0000" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="b-date">Date</label>
+              <input type="date" id="b-date" name="b-date" required />
+            </div>
+            <div class="form-group">
+              <label for="b-time">Time</label>
+              <input type="time" id="b-time" name="b-time" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="b-guests">Number of Guests</label>
+            <select id="b-guests" name="b-guests" required>
+              <option value="">Select guests</option>
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7+">7+ guests</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="b-requests">Special Requests</label>
+            <textarea id="b-requests" name="b-requests" rows="3" placeholder="Dietary requirements, celebrations, seating preferences…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Book a Table</button>
+        </form>
+      </div>
+
+      <!-- Confirmation (hidden until submitted) -->
+      <div class="booking-confirmation hidden" id="booking-confirmation">
+        <div class="confirmation-icon">✓</div>
+        <h2>Table Booked!</h2>
+        <p class="confirmation-subtitle">We look forward to seeing you at Mila Café.</p>
+        <div class="confirmation-details">
+          <div class="confirmation-row">
+            <span class="conf-label">Name</span>
+            <span class="conf-value" id="conf-b-name"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="conf-label">Date</span>
+            <span class="conf-value" id="conf-b-date"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="conf-label">Time</span>
+            <span class="conf-value" id="conf-b-time"></span>
+          </div>
+          <div class="confirmation-row">
+            <span class="conf-label">Guests</span>
+            <span class="conf-value" id="conf-b-guests"></span>
+          </div>
+        </div>
+        <div class="confirmation-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="menu.html" class="btn btn-outline">View Menu</a>
+        </div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="booking-info">
+        <h3>Visit Us</h3>
+        <p>14 Bean Street<br />Johannesburg, South Africa</p>
+        <div class="booking-info-divider"></div>
+        <h3>Opening Hours</h3>
+        <ul class="booking-hours">
+          <li><span>Mon – Fri</span><span>7:00 – 18:00</span></li>
+          <li><span>Saturday</span><span>8:00 – 17:00</span></li>
+          <li><span>Sunday</span><span>9:00 – 15:00</span></li>
+        </ul>
+        <div class="booking-info-divider"></div>
+        <h3>Contact</h3>
+        <p>hello@milacafe.co.za<br />+27 11 000 0000</p>
+        <div class="cafe-interior-img-wrap">
+          <img src="images/cafe-interior.jpg" alt="Mila Café interior" class="cafe-interior-img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <p class="footer-logo">Mila Café</p>
+        <p class="footer-location">Johannesburg, South Africa</p>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-heading">Navigate</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <p class="footer-heading">Opening Hours</p>
+        <ul>
+          <li>Mon – Fri: 7:00 – 18:00</li>
+          <li>Saturday: 8:00 – 17:00</li>
+          <li>Sunday: 9:00 – 15:00</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li>hello@milacafe.co.za</li>
+          <li>+27 11 000 0000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer-header">
+        <p class="cart-drawer-title">Added to your cart</p>
+        <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close">✕</button>
+      </div>
+      <div class="cart-drawer-item">
+        <img src="" alt="" id="drawer-item-image" class="drawer-item-img" />
+        <div class="drawer-item-details">
+          <p class="drawer-item-name" id="drawer-item-name"></p>
+          <p class="drawer-item-price" id="drawer-item-price"></p>
+          <p class="drawer-item-qty">Quantity: 1</p>
+        </div>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="cart.html" class="btn btn-primary btn-full">Go to My Cart</a>
+        <button class="btn btn-outline btn-full" id="continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
