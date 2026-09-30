@@ -22,6 +22,7 @@ cart.html           ← Shopping cart
 checkout.html       ← Checkout form (pickup or delivery)
 confirmation.html   ← Order confirmation
 booking.html        ← Book a table form
+about.html          ← About Us (story, values, team)
 
 css/
   style.css         ← All styles, light/dark mode, responsive layout
@@ -100,6 +101,9 @@ Place your images in the `images/` folder using these exact filenames:
 | `orange-juice.jpg`     | Fresh Orange Juice    |
 | `smoothie.jpg`         | Berry Smoothie        |
 | `sparkling-water.jpg`  | Sparkling Water       |
+| `team-mila.jpg`        | Mila Dlamini (About)  |
+| `team-chef.jpg`        | Sipho Nkosi (About)   |
+| `team-manager.jpg`     | Lerato Mokoena (About)|
 
 ---
 
