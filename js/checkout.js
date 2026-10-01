@@ -68,6 +68,16 @@ if (checkoutForm) {
     }
 
     const orderType = document.querySelector('input[name="order-type"]:checked').value;
+
+    if (orderType === 'pickup') {
+      const pickupTime = document.getElementById('pickup-time').value;
+      if (!pickupTime) {
+        alert('Please select a pickup time.');
+        document.getElementById('pickup-time').focus();
+        return;
+      }
+    }
+
     const cart = getCart();
 
     if (cart.length === 0) {

@@ -88,12 +88,12 @@ function addToCart(id, name, price, image) {
 
   saveCart(cart);
   updateCartCount();
-  openCartDrawer(name, price, image);
+  openCartDrawer(name, price, image, id);
 }
 
 /* ---- Cart Drawer ---- */
 
-function openCartDrawer(name, price, image) {
+function openCartDrawer(name, price, image, id) {
   const drawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('cart-overlay');
   if (!drawer) return;
@@ -104,6 +104,12 @@ function openCartDrawer(name, price, image) {
   const img = document.getElementById('drawer-item-image');
   img.src = image;
   img.alt = name;
+
+  // Show the actual current quantity from the cart
+  const cart = getCart();
+  const item = cart.find(function (i) { return i.id === id; });
+  const qtyEl = drawer.querySelector('.drawer-item-qty');
+  if (qtyEl && item) qtyEl.textContent = 'Quantity: ' + item.qty;
 
   drawer.classList.add('open');
   if (overlay) overlay.classList.add('visible');

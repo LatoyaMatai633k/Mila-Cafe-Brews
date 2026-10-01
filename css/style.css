@@ -479,8 +479,18 @@ h3 { font-size: 1.1rem; font-weight: 700; }
 }
 
 .benefit-icon {
-  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 0.75rem;
+}
+
+.benefit-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--text-muted);
+  stroke-width: 1.75;
+  fill: none;
 }
 
 .benefit-card h3 {
@@ -1443,6 +1453,16 @@ h3 { font-size: 1.1rem; font-weight: 700; }
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.65;
+}
+
+.team-avatar-placeholder {
+  background-color: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
 }
 
 .about-cta-buttons {

@@ -79,31 +79,34 @@ Then open `http://localhost:8000` in your browser.
 
 Place your images in the `images/` folder using these exact filenames:
 
-| Filename               | Used on               |
-|------------------------|-----------------------|
-| `hero-cafe.jpg`        | Home hero section     |
-| `cappuccino.jpg`       | Cappuccino            |
-| `iced-latte.jpg`       | Iced Latte            |
-| `breakfast.jpg`        | Breakfast Toast       |
-| `sandwich.jpg`         | Chicken Sandwich      |
-| `cheesecake.jpg`       | Cheesecake            |
-| `croissant.jpg`        | Chocolate Croissant   |
-| `cafe-interior.jpg`    | Booking info panel    |
-| `flat-white.jpg`       | Flat White            |
-| `espresso.jpg`         | Espresso              |
-| `americano.jpg`        | Americano             |
-| `mocha.jpg`            | Mocha                 |
-| `oats.jpg`             | Oat Bowl              |
-| `egg-muffin.jpg`       | Egg Muffin            |
-| `salad.jpg`            | Garden Salad          |
-| `wrap.jpg`             | Veggie Wrap           |
-| `brownie.jpg`          | Chocolate Brownie     |
-| `orange-juice.jpg`     | Fresh Orange Juice    |
-| `smoothie.jpg`         | Berry Smoothie        |
-| `sparkling-water.jpg`  | Sparkling Water       |
-| `team-mila.jpg`        | Mila Dlamini (About)  |
-| `team-chef.jpg`        | Sipho Nkosi (About)   |
-| `team-manager.jpg`     | Lerato Mokoena (About)|
+**Present (✅)**
+
+| Filename                  | Used on                        |
+|---------------------------|--------------------------------|
+| `home-hero.jpeg`          | Home hero section              |
+| `cappuccino.jpeg`         | Cappuccino                     |
+| `ice-latte.jpeg`          | Iced Latte                     |
+| `breakfast.jpeg`          | Breakfast Toast                |
+| `sandwich.jpeg`           | Chicken Sandwich               |
+| `cheesecake.jpeg`         | Cheesecake                     |
+| `croissant.jpeg`          | Chocolate Croissant            |
+| `cafe-interior.jpeg`      | Booking info panel + About page|
+| `flat-white.jpeg`         | Flat White                     |
+| `espresso.jpeg`           | Espresso                       |
+| `americano.jpeg`          | Americano                      |
+| `mocha.jpeg`              | Mocha                          |
+| `oats.jpeg`               | Oat Bowl                       |
+| `egg-muffin.jpeg`         | Egg Muffin                     |
+| `salad.jpeg`              | Garden Salad                   |
+
+| `wrap.jpeg`            | Veggie Wrap           |
+| `brownie.jpeg`         | Chocolate Brownie     |
+| `orange-juice.jpeg`    | Fresh Orange Juice    |
+| `smoothie.jpeg`        | Berry Smoothie        |
+| `sparkling-water.jpeg` | Sparkling Water       |
+| `team-mila.jpeg`       | Mila Dlamini (About)  |
+| `team-chef.jpeg`       | Sipho Nkosi (About)   |
+| `team-manager.jpeg`    | Lerato Mokoena (About)|
 
 ---
 
