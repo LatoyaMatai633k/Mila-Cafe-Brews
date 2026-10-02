@@ -43,7 +43,7 @@ images/             ← Place your images here (see image list below)
 
 No build tools, no installs, no server required.
 
-### Option 1 — Open directly in a browser
+### Option 1 - Open directly in a browser
 
 1. Download or clone this repository.
 2. Add your images to the `images/` folder (see image list below).
@@ -53,7 +53,7 @@ No build tools, no installs, no server required.
 Double-click index.html  →  Opens in your default browser
 ```
 
-### Option 2 — Use VS Code Live Server (recommended)
+### Option 2 - Use VS Code Live Server (recommended)
 
 1. Open the project folder in [Visual Studio Code](https://code.visualstudio.com/).
 2. Install the **Live Server** extension (by Ritwick Dey).
@@ -62,7 +62,7 @@ Double-click index.html  →  Opens in your default browser
 
 Live Server automatically refreshes the browser when you save a file.
 
-### Option 3 — Use Python's built-in server
+### Option 3 - Use Python's built-in server
 
 If you have Python installed, open a terminal in the project folder and run:
 
