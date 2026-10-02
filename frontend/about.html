@@ -116,7 +116,7 @@
       </div>
       <div class="team-card">
         <div class="team-avatar">
-          <img src="images/team-manager.jpeg" alt="Lerato Mokoena" class="team-img" />
+          <img src="images/team-manager.jpeg" alt="Thabo Mokoena" class="team-img" />
         </div>
         <h3 class="team-name">Thabo Mokoena</h3>
         <p class="team-role">Café Manager</p>
@@ -171,7 +171,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+      <p>© <span id="year"></span> Mila Café Brews. All rights reserved.</p>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
     </div>
   </footer>
 
@@ -198,6 +199,7 @@
   </div>
   <div class="cart-overlay" id="cart-overlay"></div>
 
+  <script src="js/api.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

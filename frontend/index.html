@@ -70,7 +70,7 @@
           <p class="product-desc">Rich espresso topped with velvety steamed milk foam.</p>
           <div class="product-footer">
             <span class="product-price">R38</span>
-            <button class="btn btn-add" onclick="addToCart(1, 'Cappuccino', 38, 'images/cappuccino.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="1">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
           <p class="product-desc">Smooth espresso over ice with cold milk. Refreshing every time.</p>
           <div class="product-footer">
             <span class="product-price">R42</span>
-            <button class="btn btn-add" onclick="addToCart(2, 'Iced Latte', 42, 'images/ice-latte.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="2">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@
           <p class="product-desc">Sourdough toast with avocado, poached egg and seasoning.</p>
           <div class="product-footer">
             <span class="product-price">R55</span>
-            <button class="btn btn-add" onclick="addToCart(3, 'Breakfast Toast', 55, 'images/breakfast.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="3">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@
           <p class="product-desc">Grilled chicken, lettuce and aioli on a toasted brioche bun.</p>
           <div class="product-footer">
             <span class="product-price">R72</span>
-            <button class="btn btn-add" onclick="addToCart(4, 'Chicken Sandwich', 72, 'images/sandwich.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="4">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
           <p class="product-desc">Creamy New York-style cheesecake with a buttery biscuit base.</p>
           <div class="product-footer">
             <span class="product-price">R48</span>
-            <button class="btn btn-add" onclick="addToCart(5, 'Cheesecake', 48, 'images/cheesecake.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="5">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
           <p class="product-desc">Flaky butter croissant filled with dark chocolate.</p>
           <div class="product-footer">
             <span class="product-price">R35</span>
-            <button class="btn btn-add" onclick="addToCart(6, 'Chocolate Croissant', 35, 'images/croissant.jpeg')">Add to Cart</button>
+            <button class="btn btn-add" data-id="6">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -267,7 +267,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+      <p>© <span id="year"></span> Mila Café Brews. All rights reserved.</p>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
     </div>
   </footer>
 
@@ -294,6 +295,8 @@
   </div>
   <div class="cart-overlay" id="cart-overlay"></div>
 
+  <script src="js/api.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

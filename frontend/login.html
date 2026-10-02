@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Mila Café Brews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Mila Café</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="booking.html">Book a Table</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">☀</span></button>
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <span class="cart-icon">🛒</span><span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="eyebrow">MILA CAFÉ</p>
+      <h1 id="auth-title">Login</h1>
+      <p>Sign in to add items to your cart and place orders.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div style="max-width:420px;margin:0 auto;">
+      <form id="auth-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="auth-submit">Login</button>
+      </form>
+      <p class="muted-text" style="text-align:center;margin-top:1rem;">
+        <span id="auth-switch-text">New here?</span>
+        <a href="#" id="auth-switch" style="font-weight:600;">Create an account</a>
+      </p>
+    </div>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

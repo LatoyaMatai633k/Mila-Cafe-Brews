@@ -110,7 +110,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+      <p>© <span id="year"></span> Mila Café Brews. All rights reserved.</p>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
     </div>
   </footer>
 
@@ -137,7 +138,8 @@
   </div>
   <div class="cart-overlay" id="cart-overlay"></div>
 
+  <script src="js/api.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/checkout.js"></script>
+  <script src="js/confirmation.js"></script>
 </body>
 </html>

@@ -156,33 +156,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Mila Café Brews. All rights reserved.</p>
+      <p>© <span id="year"></span> Mila Café Brews. All rights reserved.</p>
     </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
 
-  <!-- CART DRAWER -->
-  <div class="cart-drawer" id="cart-drawer">
-    <div class="cart-drawer-inner">
-      <div class="cart-drawer-header">
-        <p class="cart-drawer-title">Added to your cart</p>
-        <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close">✕</button>
-      </div>
-      <div class="cart-drawer-item">
-        <img src="" alt="" id="drawer-item-image" class="drawer-item-img" />
-        <div class="drawer-item-details">
-          <p class="drawer-item-name" id="drawer-item-name"></p>
-          <p class="drawer-item-price" id="drawer-item-price"></p>
-          <p class="drawer-item-qty">Quantity: 1</p>
-        </div>
-      </div>
-      <div class="cart-drawer-actions">
-        <a href="cart.html" class="btn btn-primary btn-full">Go to My Cart</a>
-        <button class="btn btn-outline btn-full" id="continue-shopping">Continue Shopping</button>
-      </div>
-    </div>
-  </div>
-  <div class="cart-overlay" id="cart-overlay"></div>
-
+  <!-- ORDER MATTERS: api.js first -->
+  <script src="js/api.js"></script>
   <script src="js/main.js"></script>
   <script src="js/checkout.js"></script>
 </body>

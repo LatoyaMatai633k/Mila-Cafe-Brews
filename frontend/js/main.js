@@ -1,9 +1,3 @@
-/* ===========================
-   main.js
-   Shared across all pages.
-   Handles: dark mode, nav, cart count, cart drawer.
-   =========================== */
-
 /* ---- Dark Mode ---- */
 
 function initTheme() {
@@ -50,66 +44,42 @@ if (hamburger && navLinks) {
   });
 }
 
-/* ---- Cart Utilities ---- */
+/* ---- Cart count badge ---- */
 
-// Get cart array from localStorage
-function getCart() {
-  const data = localStorage.getItem('mila_cart');
-  return data ? JSON.parse(data) : [];
-}
-
-// Save cart array to localStorage
-function saveCart(cart) {
-  localStorage.setItem('mila_cart', JSON.stringify(cart));
-}
-
-// Update the cart count badge in the nav
-function updateCartCount() {
-  const cart = getCart();
-  const total = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+// Sets the number shown on the nav cart icon.
+// (api.js calls this after fetching the cart from the backend.)
+let badgeReady = false; // skip the pop animation on the first render of a page
+function updateCartCount(total) {
   const badge = document.getElementById('cart-count');
   if (!badge) return;
+  const prev = Number(badge.textContent) || 0;
   badge.textContent = total;
   badge.classList.toggle('hidden', total === 0);
-}
-
-/* ---- Add To Cart ---- */
-// Called directly from onclick attributes on product cards.
-
-function addToCart(id, name, price, image) {
-  const cart = getCart();
-  const existing = cart.find(function (item) { return item.id === id; });
-
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ id: id, name: name, price: price, image: image, qty: 1 });
+  if (badgeReady && total > prev && badge.animate) {
+    badge.animate(
+      [{ transform: 'scale(1)' }, { transform: 'scale(1.5)' }, { transform: 'scale(1)' }],
+      { duration: 300, easing: 'ease-out' }
+    );
   }
-
-  saveCart(cart);
-  updateCartCount();
-  openCartDrawer(name, price, image, id);
+  badgeReady = true;
 }
 
 /* ---- Cart Drawer ---- */
 
-function openCartDrawer(name, price, image, id) {
+// image should already be a full URL (use imageUrl() from api.js)
+function openCartDrawer(name, price, image, qty) {
   const drawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('cart-overlay');
   if (!drawer) return;
 
-  // Fill in the drawer details
   document.getElementById('drawer-item-name').textContent = name;
-  document.getElementById('drawer-item-price').textContent = 'R' + price;
+  document.getElementById('drawer-item-price').textContent = formatRand(price);
   const img = document.getElementById('drawer-item-image');
   img.src = image;
   img.alt = name;
 
-  // Show the actual current quantity from the cart
-  const cart = getCart();
-  const item = cart.find(function (i) { return i.id === id; });
   const qtyEl = drawer.querySelector('.drawer-item-qty');
-  if (qtyEl && item) qtyEl.textContent = 'Quantity: ' + item.qty;
+  if (qtyEl) qtyEl.textContent = 'Quantity: ' + qty;
 
   drawer.classList.add('open');
   if (overlay) overlay.classList.add('visible');
@@ -134,5 +104,28 @@ if (continueShopping) continueShopping.addEventListener('click', closeCartDrawer
 const cartOverlay = document.getElementById('cart-overlay');
 if (cartOverlay) cartOverlay.addEventListener('click', closeCartDrawer);
 
+/* ---- Add to cart (shared by home + menu pages) ---- */
+// Any <button class="btn-add" data-id data-name data-price data-image> works.
+// Static cards on index.html fall back to the data-* on their .product-card.
+document.addEventListener('click', async function (e) {
+  const btn = e.target.closest('.btn-add[data-id]');
+  if (!btn || btn.disabled) return;
+
+  const src = Object.assign({}, btn.closest('.product-card') && btn.closest('.product-card').dataset, btn.dataset);
+  const product = {
+    id: Number(src.id),
+    name: src.name,
+    price: Number(src.price),
+    image: src.image
+  };
+
+  await Cart.addItem(product, 1);
+  const cart = await refreshCartCount(); // badge: 1, then 2, 3... on repeat adds
+  const line = cart.items.find(function (i) { return i.id === product.id; });
+  openCartDrawer(product.name, product.price, product.image || API_CONFIG.PLACEHOLDER_IMG, line ? line.quantity : 1);
+});
+
 /* ---- Initialise on page load ---- */
-updateCartCount();
+// Pages that render the cart themselves (cart.js) also update the badge,
+// this just makes sure every page shows the right number.
+if (typeof refreshCartCount === 'function') refreshCartCount();
